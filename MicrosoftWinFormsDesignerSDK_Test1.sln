@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp1", "WinFormsApp1\WinFormsApp1.csproj", "{4E8CD71E-F6B2-46C0-902A-B1F463CD77BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyButtonLibrary", "MyButtonLibrary\MyButtonLibrary.csproj", "{5E8760CF-D9D9-4518-B091-2B75F6017E84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{96EBBFF3-0184-40E8-8733-A20952424E22}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyButtonLibrary.WinForms.Surface.MyButton", "MyButtonLibrary.WinForms.Surface.MyButton\MyButtonLibrary.WinForms.Surface.MyButton.csproj", "{FA877105-2102-435D-AF56-8253511151DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E8CD71E-F6B2-46C0-902A-B1F463CD77BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E8CD71E-F6B2-46C0-902A-B1F463CD77BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E8CD71E-F6B2-46C0-902A-B1F463CD77BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E8CD71E-F6B2-46C0-902A-B1F463CD77BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E8760CF-D9D9-4518-B091-2B75F6017E84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E8760CF-D9D9-4518-B091-2B75F6017E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E8760CF-D9D9-4518-B091-2B75F6017E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E8760CF-D9D9-4518-B091-2B75F6017E84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA877105-2102-435D-AF56-8253511151DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA877105-2102-435D-AF56-8253511151DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA877105-2102-435D-AF56-8253511151DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA877105-2102-435D-AF56-8253511151DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FA877105-2102-435D-AF56-8253511151DA} = {96EBBFF3-0184-40E8-8733-A20952424E22}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47FE951C-9321-48D9-9D04-2828EEF3E401}
+	EndGlobalSection
+EndGlobal
