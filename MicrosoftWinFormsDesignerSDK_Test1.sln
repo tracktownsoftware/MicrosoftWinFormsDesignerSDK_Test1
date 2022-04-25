@@ -7,9 +7,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp1", "WinFormsApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyButtonLibrary", "MyButtonLibrary\MyButtonLibrary.csproj", "{5E8760CF-D9D9-4518-B091-2B75F6017E84}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{96EBBFF3-0184-40E8-8733-A20952424E22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyButtonLibrary.Design", "MyButtonLibrary.Design\MyButtonLibrary.Design.csproj", "{D06F091D-DF6F-4F40-9964-C1383C2EEEA4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyButtonLibrary.WinForms.Surface.MyButton", "MyButtonLibrary.WinForms.Surface.MyButton\MyButtonLibrary.WinForms.Surface.MyButton.csproj", "{FA877105-2102-435D-AF56-8253511151DA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pack", "Pack", "{5F5155C8-28D0-4841-BA7D-23941C051388}"
+	ProjectSection(SolutionItems) = preProject
+		Pack\pack.bat = Pack\pack.bat
+		Pack\packNotes.txt = Pack\packNotes.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Packages", "Packages", "{0125F1BD-C07B-4F84-A6C3-9CF74F0E54C8}"
+	ProjectSection(SolutionItems) = preProject
+		Pack\Packages\MyButtonLibrary.1.0.4.nupkg = Pack\Packages\MyButtonLibrary.1.0.4.nupkg
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,16 +34,16 @@ Global
 		{5E8760CF-D9D9-4518-B091-2B75F6017E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E8760CF-D9D9-4518-B091-2B75F6017E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E8760CF-D9D9-4518-B091-2B75F6017E84}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FA877105-2102-435D-AF56-8253511151DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA877105-2102-435D-AF56-8253511151DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FA877105-2102-435D-AF56-8253511151DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA877105-2102-435D-AF56-8253511151DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D06F091D-DF6F-4F40-9964-C1383C2EEEA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D06F091D-DF6F-4F40-9964-C1383C2EEEA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D06F091D-DF6F-4F40-9964-C1383C2EEEA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D06F091D-DF6F-4F40-9964-C1383C2EEEA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{FA877105-2102-435D-AF56-8253511151DA} = {96EBBFF3-0184-40E8-8733-A20952424E22}
+		{0125F1BD-C07B-4F84-A6C3-9CF74F0E54C8} = {5F5155C8-28D0-4841-BA7D-23941C051388}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {47FE951C-9321-48D9-9D04-2828EEF3E401}

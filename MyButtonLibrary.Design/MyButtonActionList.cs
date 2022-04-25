@@ -1,28 +1,30 @@
-﻿using MyButtonLibrary;
+﻿using Microsoft.DotNet.DesignTools.Designers.Actions;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
-using Microsoft.DotNet.DesignTools.Designers.Actions;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace MyButtonLibrary.WinForms.Surface.MyButton
+namespace MyButtonLibrary.Design
 {
     public class MyButtonActionList : DesignerActionList
     {
         private DesignerActionItemCollection _actionItems;
-        private string _productName;
         private MyButtonLibrary.MyButton _myButton;
         private DesignerActionUIService _designerActionUISvc;
 
+
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public MyButtonActionList(IComponent? component) : base(component)
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             if (component != null)
-            {
-                _productName = component.GetType().Name;
                 _myButton = (MyButtonLibrary.MyButton)component;
-            }
+#pragma warning disable CS8601 // Possible null reference assignment.
             _designerActionUISvc = GetService(typeof(DesignerActionUIService)) as DesignerActionUIService;
+#pragma warning restore CS8601 // Possible null reference assignment.
         }
-
-
-        public virtual string ProductName => _productName;
 
         public override DesignerActionItemCollection GetSortedActionItems()
         {

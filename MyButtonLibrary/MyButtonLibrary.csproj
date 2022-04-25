@@ -5,6 +5,16 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+	<Version>1.0.2</Version>
   </PropertyGroup>
+
+	<ItemGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<Content Include="..\MyButtonLibrary.Design\bin\Release\net6.0-windows\MyButtonLibrary.Design.dll">
+			<Pack>true</Pack>
+			<PackagePath>\lib\net6.0-windows7.0\Design\WinForms\17.0\Server</PackagePath>
+		</Content>
+	</ItemGroup>
 
 </Project>

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.DotNet.DesignTools.TypeRouting;
 
-namespace MyButtonLibrary.WinForms.Surface.MyButton.TypeRouting
+namespace MyButtonLibrary.Design
 {
     [Shared]
     [ExportTypeRoutingDefinitionProvider]
@@ -14,7 +14,7 @@ namespace MyButtonLibrary.WinForms.Surface.MyButton.TypeRouting
     {
         private readonly TypeRoutingDefinition[] _definitions = new TypeRoutingDefinition[1]
         {
-            TypeRoutingDefinitionProvider.RerouteDesigner<MyButtonDesigner>("MyButtonLibrary.WinForms.Surface.MyButton.MyButtonDesigner")
+            TypeRoutingDefinitionProvider.RerouteDesigner<MyButtonDesigner>("MyButtonLibrary.Design.MyButtonDesigner")
         };
 
         public override IEnumerable<TypeRoutingDefinition> GetDefinitions()
