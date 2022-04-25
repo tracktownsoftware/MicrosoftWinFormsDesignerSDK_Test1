@@ -1,9 +1,9 @@
-To create packages:
+To build nuget package:
 1) Open  VS2022 developer command prompt window
 2) Make \Pack the current directory
 3) In pack.bat you can modify package version in line "set PACKAGEVERSION=" 
 4) At command prompt run: pack.bat
-5) The nupkg file should output to \Pack\Packages
+5) nupkg file will output to \Pack\Packages
 
 Notes:
 The MyButtonLibrary.csproj file contains package information used by the "dotnet pack" command in pack.bat

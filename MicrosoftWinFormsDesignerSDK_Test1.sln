@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp1", "WinFormsApp1\WinFormsApp1.csproj", "{4E8CD71E-F6B2-46C0-902A-B1F463CD77BE}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyButtonLibrary", "MyButtonLibrary\MyButtonLibrary.csproj", "{5E8760CF-D9D9-4518-B091-2B75F6017E84}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyButtonLibrary.Design", "MyButtonLibrary.Design\MyButtonLibrary.Design.csproj", "{D06F091D-DF6F-4F40-9964-C1383C2EEEA4}"
@@ -26,10 +24,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4E8CD71E-F6B2-46C0-902A-B1F463CD77BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E8CD71E-F6B2-46C0-902A-B1F463CD77BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E8CD71E-F6B2-46C0-902A-B1F463CD77BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E8CD71E-F6B2-46C0-902A-B1F463CD77BE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5E8760CF-D9D9-4518-B091-2B75F6017E84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5E8760CF-D9D9-4518-B091-2B75F6017E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E8760CF-D9D9-4518-B091-2B75F6017E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
