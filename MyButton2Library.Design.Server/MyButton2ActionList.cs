@@ -7,15 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyButtonLibrary.Design
+namespace MyButton2Library.Design.Server
 {
-    internal class MyButtonActionList : DesignerActionList
+    internal class MyButton2ActionList : DesignerActionList
     {
         private readonly ComponentDesigner _designer;
 
-        public MyButtonActionList(MyButtonDesigner designer) : base(designer.Component)
+        public MyButton2ActionList(MyButton2Designer designer) : base(designer.Component)
         {
             _designer = designer;
+        }
+
+        public MyButton2Library.MyButton2 MyButton2
+        {
+            get { return (MyButton2Library.MyButton2)Component!; }
         }
 
         public override DesignerActionItemCollection GetSortedActionItems()
@@ -23,17 +28,13 @@ namespace MyButtonLibrary.Design
             DesignerActionItemCollection items = new DesignerActionItemCollection();
             items.Add(new DesignerActionMethodItem(
                 this,
-                "HelloWorldMessageBox",
-                "Hello World Messagebox...",
-                "",
-                "",
+                "InvokeMyButton2DialogNET472",
+                "Edit MyButton2 caption (NET472 dialog)",
                 true));
             items.Add(new DesignerActionMethodItem(
                 this,
-                "EditMyButtonCaption",
-                "Edit MyButton caption...",
-                "",
-                "",
+                "InvokeMyButton2DialogNET6",
+                "Edit MyButton2 (NET6 dialog shows behind VS2022)",
                 true));
             items.Add(new DesignerActionMethodItem(
                 this,
@@ -56,59 +57,34 @@ namespace MyButtonLibrary.Design
                 "BackgroundColor",
                 "",
                 true));
-            items.Add(new DesignerActionMethodItem(
-                this,
-                "EditButtonText",
-                "Edit Button Text",
-                "",
-                "",
-                true));
             return items;
         }
 
-
-        public MyButton MyButton
+        public void InvokeMyButton2DialogNET472()
         {
-            get { return (MyButtonLibrary.MyButton)Component!; }
+            _designer.InvokePropertyEditor("Text");
         }
 
-        public void HelloWorldMessageBox()
+        public void InvokeMyButton2DialogNET6()
         {
-            MessageBox.Show("Is this on top?", "Hello World");
-        }
-
-        public void EditMyButtonCaption()
-        {
-            //MyButtonDialogWindow dlg = new MyButtonDialogWindow();
-            //dlg.ButtonCaption = MyButton.Text;
-            //dlg.ShowDialog(MyButton);
-            //if (dlg.IsSavePressed)
-            //    MyButton.Text = dlg.ButtonCaption;
-
-            using (MyButtonEditorWindow dlg = new MyButtonEditorWindow())
-            {
-                dlg.ButtonCaption = MyButton.Text;
-                var dialogResult = dlg.ShowDialog(MyButton);
-                if (dialogResult == DialogResult.OK)
-                    MyButton.Text = dlg.ButtonCaption;
-            }
-
+            _designer.InvokePropertyEditor("TextTrigger");
         }
 
         public void SetBackgroundRed()
         {
-            MyButton.BackColor = System.Drawing.Color.Red;
+            MyButton2.BackColor = System.Drawing.Color.Red;
         }
 
         public void SetBackgroundWhite()
         {
-            MyButton.BackColor = System.Drawing.Color.White;
+            MyButton2.BackColor = System.Drawing.Color.White;
         }
 
         public void SetBackgroundBlue()
         {
 
-            MyButton.BackColor = System.Drawing.Color.Blue;
+            MyButton2.BackColor = System.Drawing.Color.Blue;
         }
+
     }
 }

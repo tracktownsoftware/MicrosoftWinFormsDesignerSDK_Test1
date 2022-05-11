@@ -8,11 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyButtonLibrary.Design
+namespace MyButton2Library.Design.Server
 {
-    internal class MyButtonDesigner : ControlDesigner
+    internal class MyButton2Designer : ControlDesigner
     {
-        private MyButtonLibrary.MyButton? _myButton;
+        private MyButton2Library.MyButton2? _myButton2;
         private DesignerActionListCollection? _actionLists;
         private IComponentChangeService? _componentChangeService;
         private DesignerActionUIService? _designerActionUIService;
@@ -20,21 +20,21 @@ namespace MyButtonLibrary.Design
         [System.Reflection.Obfuscation(Feature = "trigger", Exclude = false)]
         internal static void DontRemoveConstructor()
         {
-            new MyButtonDesigner();
+            new MyButton2Designer();
         }
 
-        public MyButtonDesigner()
+        public MyButton2Designer()
         {
         }
 
         public override void Initialize(IComponent component)
         {
             base.Initialize(component);
-            _myButton = component as MyButtonLibrary.MyButton;
-            if (_myButton != null)
+            _myButton2 = component as MyButton2Library.MyButton2;
+            if (_myButton2 != null)
             {
-                _myButton.Width = 200;
-                _myButton.Height = 150;
+                _myButton2.Width = 200;
+                _myButton2.Height = 150;
             }
         }
 
@@ -49,6 +49,7 @@ namespace MyButtonLibrary.Design
             }
         }
 
+
         public override DesignerActionListCollection ActionLists
         {
             get
@@ -58,7 +59,7 @@ namespace MyButtonLibrary.Design
 
                 // Visual Studio seems to call this before Initialize where the WorkbookView
                 // reference is set up.
-                if (_myButton != null)
+                if (_myButton2 != null)
                 {
                     // We InitializeServices here so that the control is up and visible
                     // before we hook the ComponentChangeService to the control since
@@ -67,12 +68,11 @@ namespace MyButtonLibrary.Design
                     InitializeServices();
 
                     if (_actionLists.Count == 0)
-                        _actionLists.Add(new MyButtonActionList(this));
+                        _actionLists.Add(new MyButton2ActionList(this));
                 }
                 return _actionLists;
             }
         }
     }
-
 
 }

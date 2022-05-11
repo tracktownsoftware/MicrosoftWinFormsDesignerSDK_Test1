@@ -6,15 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.DotNet.DesignTools.TypeRouting;
 
-namespace MyButtonLibrary.Design
+namespace MyButton2Library.Design.Server
 {
     [Shared]
     [ExportTypeRoutingDefinitionProvider]
-    internal class MyButtonRoutingDefinitionProvider : TypeRoutingDefinitionProvider
+    internal class MyButton2RoutingDefinitionProvider : TypeRoutingDefinitionProvider
     {
         private readonly TypeRoutingDefinition[] _definitions = new TypeRoutingDefinition[1]
         {
-            TypeRoutingDefinitionProvider.RerouteDesigner<MyButtonDesigner>("MyButtonLibrary.Design.MyButtonDesigner")
+            TypeRoutingDefinitionProvider.RerouteDesigner<MyButton2Designer>("MyButton2Library.Design.MyButton2Designer")
         };
 
         public override IEnumerable<TypeRoutingDefinition> GetDefinitions()

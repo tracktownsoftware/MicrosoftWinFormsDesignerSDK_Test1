@@ -1,4 +1,4 @@
-To build nuget package:
+To build both MyButtonLibrary and MyButton2Library nuget packages:
 1) Open  VS2022 developer command prompt window
 2) Make \Pack the current directory
 3) In pack.bat you can modify package version in line "set PACKAGEVERSION=" 
@@ -6,4 +6,5 @@ To build nuget package:
 5) nupkg file will output to \Pack\Packages
 
 Notes:
-The MyButtonLibrary.csproj file contains package information used by the "dotnet pack" command in pack.bat
+MyButtonLibrary package - see MyButtonLibrary.csproj for package info
+MyButton2Library package - see MyButton2Library.csproj for package info
