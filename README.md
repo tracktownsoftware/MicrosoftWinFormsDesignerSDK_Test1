@@ -1,8 +1,8 @@
 # MicrosoftWinFormsDesignerSDK_Test1
 
-Trying to figure out VS2022 design-time support for a custom NET6 WinForms control.
+Trying to figure how to add VS2022 design-time support for a custom NET6 WinForms control using Microsoft's Nuget package microsoft.winforms.designer.sdk (1.1.0-prerelease-preview3.22076.5). 
 
-Design-time support is added using Nuget package microsoft.winforms.designer.sdk (1.1.0-prerelease-preview3.22076.5). I'm playing with 2 approaches to add a design-time editor for my NET6 WinForms MyButton and MyButton2 controls:
+I'm playing with 2 approaches to add a design-time editor for my NET6 WinForms MyButton and MyButton2 controls:
 - MyButtonLibrary.MyButton (its package uses a DesignTools server only approach)
 - MyButton2Library.MyButton2 (its package uses a DesignTools server + client approach). The problem with writing DesignTools client UI code is it must be .Net Framework to work in VS2022; this means we can't leverage NET6 UI code that is alreay part of the NET6 control.
 
