@@ -19,3 +19,11 @@ Test the above nuget packages by installing them into a NET6 winforms project.
 See comments in this Microsoft blog about others trying to show a DesignTools NET6 server editor dialog; they have same problem it shows behind the VS2022 window. Official Microsoft position is to rewrite the editor in .Net Framework so it can be displayed from DesignTools client code.
 https://devblogs.microsoft.com/dotnet/state-of-the-windows-forms-designer-for-net-applications/comment-page-2/#comments
 
+>This is the reason that you cannot show UI from the DesignToolsServer. (See one of my previous responses).
+A Control Designer which must show a (modal) UI (Editor) should only be shown in the context of Visual Studio (the client).
+So. Such a Control Designer will then always have 2 parts: One for the Client (VS, .NET Framework), one for the Server (DesignToolsServer, .NET).
+They both must be delivered via NuGet and get executed in their respective contexts.
+
+>And again, having the Designer OOP is really an architectural necessity. Framework being the host and .NET being the target is one challenge, we already have. 64 Bit Framework and 32-Bit Framework being the target (for Controls depending on 32-Bit-COM for example) can get problematic in certain scenarios as well. And Visual Studio 2022 is already 64-Bit.
+
+
