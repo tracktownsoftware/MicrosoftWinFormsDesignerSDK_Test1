@@ -4,19 +4,20 @@ The goal is figure out how to add VS2022 design-time support for custom NET6 Win
 
 I'm playing with 2 approaches to add a design-time editor for my NET6 WinForms MyButton and MyButton2 controls:
 - MyButtonLibrary.MyButton (its package uses a DesignTools server only approach)
-- MyButton2Library.MyButton2 (its package uses a DesignTools server + client approach). The problem with writing DesignTools client UI code is it must be .Net Framework to work in VS2022; this means we can't leverage NET6 UI code that is already part of the NET6 control.
+- MyButton2Library.MyButton2 (its package uses a DesignTools server + client approach). The problem with writing DesignTools client UI code is it must be .Net Framework to work in VS2022; this means we can't leverage NET6 UI code that is already part of the NET6 control. Update: I found a way to trigger showing the NET6 dialog from DesignTools client code.
 
 To build packages see \Pack\packNotes.txt.
 
 Current Status:
-- ServerOnlyApproach (the latest package is in \Pack\package\MyButtonLibrary.1.0.61.nupkg). This approach contains DesignTools NET6 server only code. The biggest issue is the NET6 button editor dialog shows behind the VS2022 IDE window giving the impression VS2022 is frozen.
-- ServerAndClientApproach (the latest package is in \Pack\package\MyButton2Library.1.0.61.nupkg). This approach contains DesignTools NET6 server code and DesignTools NET472 client code. Using the design-time context menu on MyButton2 you can see a button editor implemented using NET472 (SUCCESS but I don't want to reimplement my NET6 control UI in .Net Framework!) and another editor implemented using NET6 server code (see code for how I trigger the showing of the NET6 UI from NET472 DesignTools client code). There still is an issue with the NET6 editor dialog showing behind the VS2022 giving impression VS2022 is frozen.
+- SUCCESS: ServerOnlyApproach (the latest package is in \Pack\package\MyButtonLibrary.1.0.78.nupkg). This approach contains DesignTools NET6 server only code. There was an issue with this NET6 dialog showing underneath VS2022 the first time it is displayed. This is fixed by setting windowstate to minimized in the constructor, and then in the load event setting windowstate to normal and then calling Activate.
+- SUCCESS: ServerAndClientApproach (the latest package is in \Pack\package\MyButton2Library.1.0.78.nupkg). This approach contains DesignTools NET6 server code and DesignTools NET472 client code. Using the design-time context menu on MyButton2 you can see a button editor implemented using NET472 (SUCCESS but I don't want to reimplement my NET6 control UI in .Net Framework!) and another editor implemented using NET6 server code (see code for how I trigger the showing of the NET6 UI from NET472 DesignTools client code). There was an issue with this NET6 dialog showing underneath VS2022 the first time it is displayed. This is fixed by setting windowstate to minimized in the constructor, and then in the load event setting windowstate to normal and then calling Activate.
 
 Test the above nuget packages by installing them into a NET6 winforms project.
 - From the VS2022 toolbox drop MyButton and MyButton2 onto different WinForms forms
 - Use the design-time context menu to test menu items
 
-See comments in this Microsoft blog about others trying to show a DesignTools NET6 server editor dialog; they have same problem it shows behind the VS2022 window. Official Microsoft position is to rewrite the editor in .Net Framework so it can be displayed from DesignTools client code.
+See comments in this Microsoft blog with others showing a NET6 editor dialog with the issue it shows behind the VS2022 window. See my comments above under 'Current Status" for a workaround that appears to work.
+The official Microsoft position is to rewrite the editor in .Net Framework so it can be displayed from DesignTools client code:
 https://devblogs.microsoft.com/dotnet/state-of-the-windows-forms-designer-for-net-applications/comment-page-2/#comments
 
 >This is the reason that you cannot show UI from the DesignToolsServer. (See one of my previous responses).
