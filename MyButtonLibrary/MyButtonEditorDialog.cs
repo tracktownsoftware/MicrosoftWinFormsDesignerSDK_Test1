@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace MyButtonLibrary
 {
-    public partial class MyButtonEditorWindow : Form
+    public partial class MyButtonEditorDialog : Form
     {
-        //public bool IsSavePressed;
-        public MyButtonEditorWindow()
+        public MyButtonEditorDialog()
         {
             InitializeComponent();
-            //IsSavePressed = false;
+            this.WindowState = FormWindowState.Minimized;
+            this.Load += MyButtonEditorDialog_Load;
         }
 
         public string ButtonCaption
@@ -27,19 +27,18 @@ namespace MyButtonLibrary
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //IsSavePressed = true;
             this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //IsSavePressed = false;
             this.Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void MyButtonEditorDialog_Load(object? sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Normal;
+            this.Activate();
         }
     }
 }

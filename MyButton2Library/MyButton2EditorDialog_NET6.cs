@@ -12,11 +12,11 @@ namespace MyButton2Library
 {
     public partial class MyButton2EditorDialog_NET6 : Form
     {
-        //public bool IsSavePressed;
         public MyButton2EditorDialog_NET6()
         {
             InitializeComponent();
-            //IsSavePressed = false;
+            this.WindowState = FormWindowState.Minimized;
+            this.Load += MyButton2EditorDialog_NET6_Load;
         }
 
         public string ButtonCaption
@@ -27,19 +27,18 @@ namespace MyButton2Library
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //IsSavePressed = true;
             this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //IsSavePressed = false;
             this.Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void MyButton2EditorDialog_NET6_Load(object? sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Normal;
+            this.Activate();
         }
     }
 }

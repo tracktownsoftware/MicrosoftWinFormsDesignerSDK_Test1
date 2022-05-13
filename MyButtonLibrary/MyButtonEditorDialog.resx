@@ -57,4 +57,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>This MyButtonLibrary.dll NET6 dialog is displayed from DesignTools server code in NET6 MyButtonLibrary.Design.dll.
+
+There was an issue with this NET6 dialog showing underneath VS2022 the first time it is displayed. This is fixed by setting windowstate to minimized in the constructor, and then in the load event setting windowstate to normal and then calling Activate.</value>
+  </data>
 </root>

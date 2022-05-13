@@ -25,7 +25,6 @@ namespace MyButton2Library
             } 
         }
 
-
         [Editor("MyButton2Editor_TriggerNET6Dialog", typeof(UITypeEditor))]
         public string TextTrigger
         {

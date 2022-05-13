@@ -15,8 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pack", "Pack", "{5F5155C8-2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Packages", "Packages", "{0125F1BD-C07B-4F84-A6C3-9CF74F0E54C8}"
 	ProjectSection(SolutionItems) = preProject
-		Pack\Packages\MyButton2Library.1.0.61.nupkg = Pack\Packages\MyButton2Library.1.0.61.nupkg
-		Pack\Packages\MyButtonLibrary.1.0.61.nupkg = Pack\Packages\MyButtonLibrary.1.0.61.nupkg
+		Pack\Packages\MyButton2Library.1.0.78.nupkg = Pack\Packages\MyButton2Library.1.0.78.nupkg
+		Pack\Packages\MyButtonLibrary.1.0.78.nupkg = Pack\Packages\MyButtonLibrary.1.0.78.nupkg
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyButton2Library", "MyButton2Library\MyButton2Library.csproj", "{3DC66325-1AD1-4DF4-B7F7-F25DB62E2ED0}"

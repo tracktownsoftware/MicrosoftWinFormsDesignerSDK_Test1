@@ -28,13 +28,13 @@ namespace MyButton2Library.Design.Server
             DesignerActionItemCollection items = new DesignerActionItemCollection();
             items.Add(new DesignerActionMethodItem(
                 this,
-                "InvokeMyButton2DialogNET472",
-                "Edit MyButton2 caption (NET472 dialog)",
+                "InvokeMyButton2DialogNET6",
+                "Edit MyButton2 caption (NET6 dialog)...",
                 true));
             items.Add(new DesignerActionMethodItem(
                 this,
-                "InvokeMyButton2DialogNET6",
-                "Edit MyButton2 (NET6 dialog shows behind VS2022)",
+                "InvokeMyButton2DialogNET472",
+                "Edit MyButton2 caption (NET472 dialog)...",
                 true));
             items.Add(new DesignerActionMethodItem(
                 this,

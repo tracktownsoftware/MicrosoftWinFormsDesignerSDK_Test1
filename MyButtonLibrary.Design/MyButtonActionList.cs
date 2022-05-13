@@ -23,15 +23,8 @@ namespace MyButtonLibrary.Design
             DesignerActionItemCollection items = new DesignerActionItemCollection();
             items.Add(new DesignerActionMethodItem(
                 this,
-                "HelloWorldMessageBox",
-                "Hello World Messagebox...",
-                "",
-                "",
-                true));
-            items.Add(new DesignerActionMethodItem(
-                this,
                 "EditMyButtonCaption",
-                "Edit MyButton caption...",
+                "Edit MyButton caption (NET6 dialog)...",
                 "",
                 "",
                 true));
@@ -72,27 +65,15 @@ namespace MyButtonLibrary.Design
             get { return (MyButtonLibrary.MyButton)Component!; }
         }
 
-        public void HelloWorldMessageBox()
-        {
-            MessageBox.Show("Is this on top?", "Hello World");
-        }
-
         public void EditMyButtonCaption()
         {
-            //MyButtonDialogWindow dlg = new MyButtonDialogWindow();
-            //dlg.ButtonCaption = MyButton.Text;
-            //dlg.ShowDialog(MyButton);
-            //if (dlg.IsSavePressed)
-            //    MyButton.Text = dlg.ButtonCaption;
-
-            using (MyButtonEditorWindow dlg = new MyButtonEditorWindow())
+            using (MyButtonEditorDialog dlg = new MyButtonEditorDialog())
             {
                 dlg.ButtonCaption = MyButton.Text;
                 var dialogResult = dlg.ShowDialog(MyButton);
                 if (dialogResult == DialogResult.OK)
                     MyButton.Text = dlg.ButtonCaption;
             }
-
         }
 
         public void SetBackgroundRed()

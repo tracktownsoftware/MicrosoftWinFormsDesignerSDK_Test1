@@ -43,16 +43,15 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(1056, 250);
+            this.textBox1.Size = new System.Drawing.Size(1056, 276);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = resources.GetString("textBox1.Text");
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(33, 291);
+            this.label1.Location = new System.Drawing.Point(33, 306);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(380, 46);
             this.label1.TabIndex = 1;
@@ -60,10 +59,10 @@
             // 
             // textButtonCaption
             // 
-            this.textButtonCaption.Location = new System.Drawing.Point(33, 357);
+            this.textButtonCaption.Location = new System.Drawing.Point(33, 367);
             this.textButtonCaption.Multiline = true;
             this.textButtonCaption.Name = "textButtonCaption";
-            this.textButtonCaption.Size = new System.Drawing.Size(1056, 132);
+            this.textButtonCaption.Size = new System.Drawing.Size(1056, 122);
             this.textButtonCaption.TabIndex = 2;
             // 
             // button1
@@ -91,8 +90,10 @@
             // 
             // MyButton2EditorDialog_NET6
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(1101, 590);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
