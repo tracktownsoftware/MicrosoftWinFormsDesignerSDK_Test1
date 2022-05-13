@@ -1,11 +1,29 @@
 # MicrosoftWinFormsDesignerSDK_Test1
 
-Trying to figure out VS2022 design-time support for a custom NET6 WinForms control.
+The goal is figure out how to add VS2022 design-time support for custom NET6 WinForms controls using Microsoft's Nuget package microsoft.winforms.designer.sdk (1.1.0-prerelease-preview3.22076.5). Microsoft documentation is limited.
 
-To build a package see \Pack\packNotes.txt.
-The latest package I made is in \Pack\package.
+I'm playing with 2 approaches to add a design-time editor for my NET6 WinForms MyButton and MyButton2 controls:
+- MyButtonLibrary.MyButton (its package uses a DesignTools server only approach)
+- MyButton2Library.MyButton2 (its package uses a DesignTools server + client approach). The problem with writing DesignTools client UI code is it must be .Net Framework to work in VS2022; this means we can't leverage NET6 UI code that is already part of the NET6 control.
 
-The MyButtonLibrary.Design project uses Nuget package microsoft.winforms.designer.sdk (1.1.0-prerelease-preview3.22076.5) to add design-time support to the MyButtonLibrary.MyButton control.  
+To build packages see \Pack\packNotes.txt.
 
 Current Status:
-- MyButton design-time context menu can change MyButton background to red, white or blue.
+- ServerOnlyApproach (the latest package is in \Pack\package\MyButtonLibrary.1.0.61.nupkg). This approach contains DesignTools NET6 server only code. The biggest issue is the NET6 button editor dialog shows behind the VS2022 IDE window giving the impression VS2022 is frozen.
+- ServerAndClientApproach (the latest package is in \Pack\package\MyButton2Library.1.0.61.nupkg). This approach contains DesignTools NET6 server code and DesignTools NET472 client code. Using the design-time context menu on MyButton2 you can see a button editor implemented using NET472 (SUCCESS but I don't want to reimplement my NET6 control UI in .Net Framework!) and another editor implemented using NET6 server code (see code for how I trigger the showing of the NET6 UI from NET472 DesignTools client code). There still is an issue with the NET6 editor dialog showing behind the VS2022 giving impression VS2022 is frozen.
+
+Test the above nuget packages by installing them into a NET6 winforms project.
+- From the VS2022 toolbox drop MyButton and MyButton2 onto different WinForms forms
+- Use the design-time context menu to test menu items
+
+See comments in this Microsoft blog about others trying to show a DesignTools NET6 server editor dialog; they have same problem it shows behind the VS2022 window. Official Microsoft position is to rewrite the editor in .Net Framework so it can be displayed from DesignTools client code.
+https://devblogs.microsoft.com/dotnet/state-of-the-windows-forms-designer-for-net-applications/comment-page-2/#comments
+
+>This is the reason that you cannot show UI from the DesignToolsServer. (See one of my previous responses).
+A Control Designer which must show a (modal) UI (Editor) should only be shown in the context of Visual Studio (the client).
+So. Such a Control Designer will then always have 2 parts: One for the Client (VS, .NET Framework), one for the Server (DesignToolsServer, .NET).
+They both must be delivered via NuGet and get executed in their respective contexts.
+
+>And again, having the Designer OOP is really an architectural necessity. Framework being the host and .NET being the target is one challenge, we already have. 64 Bit Framework and 32-Bit Framework being the target (for Controls depending on 32-Bit-COM for example) can get problematic in certain scenarios as well. And Visual Studio 2022 is already 64-Bit.
+
+
