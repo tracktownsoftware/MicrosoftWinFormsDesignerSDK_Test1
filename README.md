@@ -16,8 +16,8 @@ Test the above nuget packages by installing them into a NET6 winforms project.
 - From the VS2022 toolbox drop MyButton and MyButton2 onto different WinForms forms
 - Use the design-time context menu to test menu items
 
-See comments in this Microsoft blog with others showing a NET6 editor dialog with the issue it shows behind the VS2022 window. See my comments above under 'Current Status" for a workaround that appears to work.
-The official Microsoft position is to rewrite the editor in .Net Framework so it can be displayed from DesignTools client code:
+This Microsoft blog has a few comments about the NET6 editor dialog shows behind the VS2022 window issue. See my comments above under 'Current Status" for a workaround that appears to work.
+The official Microsoft position is to not use NET6 UI and rewrite the editor in .Net Framework so it can be displayed from DesignTools client code:
 https://devblogs.microsoft.com/dotnet/state-of-the-windows-forms-designer-for-net-applications/comment-page-2/#comments
 
 >This is the reason that you cannot show UI from the DesignToolsServer. (See one of my previous responses).
