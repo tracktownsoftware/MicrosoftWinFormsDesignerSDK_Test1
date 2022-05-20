@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyButtonLibrary.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,6 +40,12 @@ namespace MyButtonLibrary
         {
             this.WindowState = FormWindowState.Normal;
             this.Activate();
+        }
+
+        public void ApplicationSettingsTest()
+        {
+            this.labelApplicationSettingsTest.Visible = true;
+            this.labelApplicationSettingsTest.Text = Settings.Default.HelloWorld;
         }
     }
 }

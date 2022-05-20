@@ -30,6 +30,13 @@ namespace MyButtonLibrary.Design
                 true));
             items.Add(new DesignerActionMethodItem(
                 this,
+                "ApplicationSettingsBug",
+                "Reading application settings fails in NET6 WinForms designer...",
+                "",
+                "",
+                true));
+            items.Add(new DesignerActionMethodItem(
+                this,
                 "SetBackgroundRed",
                 "Red Background",
                 "BackgroundColor",
@@ -70,6 +77,18 @@ namespace MyButtonLibrary.Design
             using (MyButtonEditorDialog dlg = new MyButtonEditorDialog())
             {
                 dlg.ButtonCaption = MyButton.Text;
+                var dialogResult = dlg.ShowDialog(MyButton);
+                if (dialogResult == DialogResult.OK)
+                    MyButton.Text = dlg.ButtonCaption;
+            }
+        }
+
+        public void ApplicationSettingsBug()
+        {
+            using (MyButtonEditorDialog dlg = new MyButtonEditorDialog())
+            {
+                dlg.ButtonCaption = MyButton.Text;
+                dlg.ApplicationSettingsTest();
                 var dialogResult = dlg.ShowDialog(MyButton);
                 if (dialogResult == DialogResult.OK)
                     MyButton.Text = dlg.ButtonCaption;

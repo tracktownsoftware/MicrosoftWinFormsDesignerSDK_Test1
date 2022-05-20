@@ -1,4 +1,4 @@
-set PACKAGEVERSION=1.0.78
+set PACKAGEVERSION=1.0.91
 msbuild ..\MicrosoftWinFormsDesignerSDK_Test1.sln -p:Configuration=Release 
 
 rem build MyButtonLibrary package
