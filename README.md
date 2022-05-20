@@ -1,14 +1,16 @@
 ## update (2020-May-20) Reading application settings fails in NET6 WinForms designer
 To reproduce using the MyButtonLibrary nuget package:
-1) MyButtonLibrary has an application setting "HelloWorld" that contains a string value. This setting will be accessed in the tests beow at runtime and then at design-time.
+1) MyButtonLibrary has an application setting "HelloWorld" that contains a string value. This setting will be accessed in the tests below at runtime and then an attempt in the designer.
 2) In VS2022 make a new NET6 WinForms project
 3) Copy \Pack\package\MyButtonLibrary.1.0.90.nupkg to a local Nuget feed and in your NET6 WinForms project add a Nuget reference to it
 4) From VS2022 tools window drag and drop MyButton control onto Form1
 5) Run the app and click the MyButton control. The button text changes. This shows that application settings can be accessed at runtime.
 6) Stop the app to return to design mode
 7) In the Form1 window right-click the MyButton control to access the design-time context menu. Select "Reading application settings fails in NET6 WinForms designer..."
-8) You will get an exception "The settings property 'HelloWorld' was not found. This is caused by MyButton application settings failing in the designer. 
-9) The output window contains: REQUEST FAILURES: Designers/InvokeDesignerAction Microsoft.DotNet.DesignTools.Client.DesignToolsServerException: The settings property 'HelloWorld' was not found.
+8) You will get an exception "The settings property 'HelloWorld' was not found". 
+
+Another exception I saw earlier was "Invalid URI: The hostname could not be parsed". 
+The output window contains: REQUEST FAILURES: Designers/InvokeDesignerAction Microsoft.DotNet.DesignTools.Client.DesignToolsServerException: The settings property 'HelloWorld' was not found.
 
 # MicrosoftWinFormsDesignerSDK_Test1
 
