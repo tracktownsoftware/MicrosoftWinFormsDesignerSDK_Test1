@@ -1,3 +1,7 @@
+# update (2020-May-20)
+
+
+
 # MicrosoftWinFormsDesignerSDK_Test1
 
 The goal is figure out how to add VS2022 design-time support for custom NET6 WinForms controls using Microsoft's Nuget package microsoft.winforms.designer.sdk (1.1.0-prerelease-preview3.22076.5). Microsoft documentation is limited.
